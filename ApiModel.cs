@@ -12,7 +12,13 @@ public class ApiModel
     [Description("Tên là gì?")]
     [DefaultValue("OK")]
     public string Name {get;set;}
-    public string Status {get;set;}
+    public string Status {get;set;} 
+}
+public class FileModel
+{
+    public int UserId { get; set; }
+    public string? Description { get; set; }
+    public IFormFile Image { get; set; }
 }
 public enum ApiEnum
 {

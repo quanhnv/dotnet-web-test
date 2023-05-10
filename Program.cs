@@ -1,3 +1,4 @@
+using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 
@@ -8,36 +9,35 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(
-    a =>
+builder.Services.AddSwaggerGen(options => {
+    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
     {
-        a.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+        Version = "v1",
+        Title = "Test API Full",
+        Description = "Test Full Swagger feature",
+    });
+    options.EnableAnnotations();
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+    options.AddSecurityDefinition("JWT Bearer", new OpenApiSecurityScheme
+    {
+        Description = "This is a JWT bearer authentication scheme",
+        In = ParameterLocation.Header,
+        Scheme = "Bearer",
+        Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http
+    });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
         {
-            Version = "v1",
-            Title = "Test API Full",
-            Description = "Test Full Swagger feature",
-        });
-        a.EnableAnnotations();
-        a.AddSecurityDefinition("JWT Bearer", new OpenApiSecurityScheme
-        {
-            Description = "This is a JWT bearer authentication scheme",
-            In = ParameterLocation.Header,
-            Scheme = "Bearer",
-            Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http
-        });
-        a.AddSecurityRequirement(new OpenApiSecurityRequirement
-        {
-            {
-                new OpenApiSecurityScheme{
-                    Reference = new OpenApiReference{
-                        Id = "JWT Bearer A",
-                        Type = ReferenceType.SecurityScheme
-                    }
-                }, new List<string>()
-            }
-        });
-    }
-);
+            new OpenApiSecurityScheme{
+                Reference = new OpenApiReference{
+                    Id = "JWT Bearer A",
+                    Type = ReferenceType.SecurityScheme
+                }
+            }, new List<string>()
+        }
+    });
+});
 // builder.Services.AddApiVersioning(setup =>
 //             {
 //                 setup.DefaultApiVersion = new ApiVersion(1, 0);

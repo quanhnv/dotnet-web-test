@@ -36,4 +36,11 @@ public class WeatherForecastController : ControllerBase
     public async Task<IActionResult> Test([FromBody]ApiModel model){
         return Ok();
     }
+
+    [HttpGet("test-file")]
+    [Consumes("application/json")]
+    [Produces("application/json")]
+    public async Task<IActionResult> TestFile([FromForm]FileModel model){
+        return Ok();
+    }
 }
