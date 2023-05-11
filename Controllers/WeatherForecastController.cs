@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace DotnetWebTest.Controllers;
 
@@ -29,11 +30,11 @@ public class WeatherForecastController : ControllerBase
         })
         .ToArray();
     }
-
+    
     [HttpGet("test")]
     [Consumes("application/json")]
     [Produces("application/json")]
-    public async Task<IActionResult> Test([FromBody]ApiModel model){
+    public async Task<IActionResult> Test([FromBody]ApiModel model, [FromBody]ApiModel2 model2){
         return Ok();
     }
 
@@ -41,6 +42,14 @@ public class WeatherForecastController : ControllerBase
     [Consumes("application/json")]
     [Produces("application/json")]
     public async Task<IActionResult> TestFile([FromForm]FileModel model){
+        return Ok();
+    }
+
+    [HttpGet("single")]
+    [SwaggerParameter("text", "Nhập text vào")]
+    [SwaggerOperation(Summary = "Test cái này")]
+    public async Task<IActionResult> TestSingleStringAsync(string text)
+    {
         return Ok();
     }
 }

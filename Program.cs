@@ -6,7 +6,12 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().
+AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.PropertyNamingPolicy = null;
+})
+;
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options => {
@@ -17,8 +22,8 @@ builder.Services.AddSwaggerGen(options => {
         Description = "Test Full Swagger feature",
     });
     options.EnableAnnotations();
-    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-    options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
+    // var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    // options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));k
     options.AddSecurityDefinition("JWT Bearer", new OpenApiSecurityScheme
     {
         Description = "This is a JWT bearer authentication scheme",
@@ -37,6 +42,16 @@ builder.Services.AddSwaggerGen(options => {
             }, new List<string>()
         }
     });
+    // Không dùng XML
+    // string xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    // string xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    // options.IncludeXmlComments(xmlPath);
+
+    //options.OperationFilter<DisplayOperationFilter>();
+    options.ParameterFilter<SwaggerParameterInfoAttributeFilter>(); //Cho những parameter nhỏ lẻ, ko gắn với model => Lưu tên, type, rule
+    //options.OperationFilter<SwaggerParameterAttributeFilter>(); //Cho những parameter nhỏ lẻ, ko gắn với model => Lưu tên, type, rule
+    //options.SchemaFilter<SwaggerSchemaAttributeFilter>(); //Cho những parameter là những object phức tạp
+    //options.Filter<SwaggerSchemaAttributeFilter>(); //Cho những parameter nhỏ lẻ, ko gắn với model => Lưu tên, type, rule
 });
 // builder.Services.AddApiVersioning(setup =>
 //             {

@@ -36,3 +36,5 @@
 /Users/quannguyen/Desktop/Repos/DotnetWebTest/obj/Debug/net7.0/DotnetWebTest.genruntimeconfig.cache
 /Users/quannguyen/Desktop/Repos/DotnetWebTest/obj/Debug/net7.0/ref/DotnetWebTest.dll
 /Users/quannguyen/Desktop/Repos/DotnetWebTest/bin/Debug/net7.0/Swashbuckle.AspNetCore.Annotations.dll
+/Users/quannguyen/Desktop/Repos/DotnetWebTest/bin/Debug/net7.0/DotnetWebTest.xml
+/Users/quannguyen/Desktop/Repos/DotnetWebTest/obj/Debug/net7.0/DotnetWebTest.xml

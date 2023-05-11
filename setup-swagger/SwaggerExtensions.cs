@@ -8,8 +8,8 @@ public static class SwaggerExtensions
     {
         services.Configure<SwaggerConfig>(configuration.GetSection(nameof(SwaggerConfig)));
         // Configure Swagger Options
-        services.AddTransient<IConfigureOptions<SwaggerUIOptions>, ConfigureSwaggerUiOptions>();
-        services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerGenOptions>();
+        // services.AddTransient<IConfigureOptions<SwaggerUIOptions>, ConfigureSwaggerUiOptions>();
+        // services.AddTransient<IConfigureOptions<SwaggerGenOptions>, ConfigureSwaggerGenOptions>();
 
         // Register the Swagger generator
         services.AddSwaggerGen(options =>
@@ -18,7 +18,7 @@ public static class SwaggerExtensions
             options.EnableAnnotations();
 
             // Application Controller's API document description information
-            options.DocumentFilter<SwaggerDocumentFilter>();
+            // options.DocumentFilter<SwaggerDocumentFilter>();
         });
     }
 

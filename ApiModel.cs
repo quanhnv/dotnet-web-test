@@ -1,6 +1,8 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Swashbuckle.AspNetCore.Annotations;
 
+[Description("Tôi là 1 model để bạn tham khảo")]
 public class ApiModel
 {
     public ApiModel(){
