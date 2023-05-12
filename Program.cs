@@ -48,9 +48,9 @@ builder.Services.AddSwaggerGen(options => {
     // options.IncludeXmlComments(xmlPath);
 
     //options.OperationFilter<DisplayOperationFilter>();
-    options.ParameterFilter<SwaggerParameterInfoAttributeFilter>(); //Cho những parameter nhỏ lẻ, ko gắn với model => Lưu tên, type, rule
-    //options.OperationFilter<SwaggerParameterAttributeFilter>(); //Cho những parameter nhỏ lẻ, ko gắn với model => Lưu tên, type, rule
-    //options.SchemaFilter<SwaggerSchemaAttributeFilter>(); //Cho những parameter là những object phức tạp
+    //options.ParameterFilter<SwaggerParameterInfoAttributeFilter>(); //Cho những parameter nhỏ lẻ, ko gắn với model => Lưu tên, type, rule
+    options.OperationFilter<SwaggerParameterAttributeFilter>(); //Cho những parameter nhỏ lẻ, ko gắn với model => Lưu tên, type, rule
+    options.SchemaFilter<SwaggerSchemaAttributeFilter>(); //Cho những parameter là những object phức tạp
     //options.Filter<SwaggerSchemaAttributeFilter>(); //Cho những parameter nhỏ lẻ, ko gắn với model => Lưu tên, type, rule
 });
 // builder.Services.AddApiVersioning(setup =>

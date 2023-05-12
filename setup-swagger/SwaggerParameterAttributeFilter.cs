@@ -9,9 +9,8 @@ public class SwaggerParameterAttributeFilter : IOperationFilter
         var attributes = context.MethodInfo.DeclaringType.GetCustomAttributes(true)
             .Union(context.MethodInfo.GetCustomAttributes(true))
             .OfType<SwaggerParameterAttribute>();
-
         foreach (var attribute in attributes)
-        {
+        {            
             var a = operation.Parameters.FirstOrDefault(b=>b.Name == attribute.Name);
             if(a!=null){
                 a.Description = attribute.Description;

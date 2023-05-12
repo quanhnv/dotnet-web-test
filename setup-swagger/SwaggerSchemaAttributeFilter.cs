@@ -8,9 +8,15 @@ public class SwaggerSchemaAttributeFilter : ISchemaFilter
     public void Apply(OpenApiSchema schema, SchemaFilterContext context)
     {
         var type = context.Type;
+        var classInfo = context.Type.GetCustomAttributes(typeof(DescriptionAttribute), false)
+                    .Cast<DescriptionAttribute>()
+                    .FirstOrDefault()?.Description;
+        if(!string.IsNullOrEmpty(classInfo)){
+            schema.Description = classInfo;
+        }
         if (type.IsEnum)
-        {
-            schema.Description = $"Enum of {type.Name}";
+        {            
+            schema.Description = $"Enum of {type.Name}";// Dành để mô tả cả object
         }
         else
         {
