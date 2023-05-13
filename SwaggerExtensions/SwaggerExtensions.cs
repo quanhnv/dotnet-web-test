@@ -4,8 +4,10 @@ using Microsoft.AspNetCore.Mvc.Versioning;
 
 public static class SwaggerExtensions
     {
-        public static IServiceCollection AddSwaggerMiddleware(this IServiceCollection services)
+        public static IServiceCollection AddSwaggerMiddleware(this IServiceCollection services, IConfiguration configuration)
         {
+            services.Configure<SwaggerConfig>(configuration.GetSection(nameof(SwaggerConfig)));
+            var swaggerConfig = configuration.GetSection(nameof(SwaggerConfig)).Get<SwaggerConfig>();
             services.AddSwaggerGen();
             services.AddApiVersioning(opt =>
             {
@@ -28,8 +30,9 @@ public static class SwaggerExtensions
             return services;
         }
 
-        public static IApplicationBuilder UseSwaggerMiddleware(this IApplicationBuilder app)
+        public static IApplicationBuilder UseSwaggerMiddleware(this IApplicationBuilder app, IConfiguration configuration)
         {
+            var swaggerConfig = configuration.GetSection(nameof(SwaggerConfig)).Get<SwaggerConfig>();
             var apiVersionDescriptionProvider = app.ApplicationServices.GetRequiredService<IApiVersionDescriptionProvider>();
             app.UseSwagger();
             app.UseSwaggerUI(options =>
@@ -38,6 +41,7 @@ public static class SwaggerExtensions
                 {
                     options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json",
                         description.GroupName.ToUpperInvariant());
+                    options.RoutePrefix = swaggerConfig.Title;
                 }
                 options.DisplayRequestDuration();
                 options.DefaultModelRendering(Swashbuckle.AspNetCore.SwaggerUI.ModelRendering.Model);
