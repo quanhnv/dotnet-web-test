@@ -19,6 +19,11 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
 
+    /// <summary>
+    /// Post weather forecast
+    /// </summary>
+    /// <param name="forecast">WeatherForeCast object</param>
+    /// <returns>Returns string response</returns>
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {

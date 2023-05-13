@@ -2,6 +2,7 @@ using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using System.Reflection;
 
 public class ConfigureSwaggerOptions
     : IConfigureNamedOptions<SwaggerGenOptions>
@@ -61,6 +62,8 @@ public class ConfigureSwaggerOptions
 
         options.OperationFilter<SwaggerParameterAttributeFilter>();
         options.SchemaFilter<SwaggerSchemaAttributeFilter>();
+
+        options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, $"{Assembly.GetExecutingAssembly().GetName().Name}.xml"));
     }
 
     /// <summary>

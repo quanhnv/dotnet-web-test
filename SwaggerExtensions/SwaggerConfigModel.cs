@@ -1,4 +1,4 @@
-public class SwaggerConfig
+public class SwaggerConfigModel
 {
     public string Title { get; set; }
 
