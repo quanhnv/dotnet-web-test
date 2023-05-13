@@ -1,10 +1,14 @@
 ﻿<Properties StartupConfiguration="{77A9D69D-B5B2-4940-B907-C12C693E49AC}|https">
-  <MonoDevelop.Ide.ItemProperties.DotnetWebTest PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workbench ActiveDocument="Controllers/WeatherForecastController.cs">
     <Files>
-      <File FileName="Controllers/WeatherForecastController.cs" Line="33" Column="1" />
+      <File FileName="Controllers/WeatherForecastController.cs" Line="12" Column="32" />
+      <File FileName="Program.cs" Line="16" Column="1" />
+      <File FileName="SwaggerExtensions/SwaggerExtensions.cs" Line="26" Column="15" />
+      <File FileName="SwaggerExtensions/ConfigureSwaggerOptions.cs" Line="6" Column="14" />
+      <File FileName="Controllers/WeatherForecastController2.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,14 +23,16 @@
                 <Node name="WeatherForecastController.cs" selected="True" />
               </Node>
               <Node name="Properties" expanded="True" />
+              <Node name="setup-swagger" expanded="True" />
+              <Node name="SwaggerExtensions" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.DotnetWebTest PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

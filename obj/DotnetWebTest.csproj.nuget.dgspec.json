@@ -38,17 +38,13 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Mvc.ApiExplorer": {
+            "Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer": {
               "target": "Package",
-              "version": "[2.2.0, )"
+              "version": "[5.0.0, )"
             },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.5, )"
-            },
-            "Microsoft.Aspnetcore.mvc.versioning": {
-              "target": "Package",
-              "version": "[5.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

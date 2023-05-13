@@ -7,10 +7,7 @@
 /Users/quannguyen/Desktop/Repos/DotnetWebTest/bin/Debug/net7.0/DotnetWebTest.pdb
 /Users/quannguyen/Desktop/Repos/DotnetWebTest/bin/Debug/net7.0/Microsoft.AspNetCore.Mvc.Versioning.dll
 /Users/quannguyen/Desktop/Repos/DotnetWebTest/bin/Debug/net7.0/Microsoft.AspNetCore.OpenApi.dll
-/Users/quannguyen/Desktop/Repos/DotnetWebTest/bin/Debug/net7.0/Microsoft.DotNet.PlatformAbstractions.dll
-/Users/quannguyen/Desktop/Repos/DotnetWebTest/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll
 /Users/quannguyen/Desktop/Repos/DotnetWebTest/bin/Debug/net7.0/Microsoft.OpenApi.dll
-/Users/quannguyen/Desktop/Repos/DotnetWebTest/bin/Debug/net7.0/Newtonsoft.Json.dll
 /Users/quannguyen/Desktop/Repos/DotnetWebTest/bin/Debug/net7.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/quannguyen/Desktop/Repos/DotnetWebTest/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/quannguyen/Desktop/Repos/DotnetWebTest/bin/Debug/net7.0/Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -38,3 +35,4 @@
 /Users/quannguyen/Desktop/Repos/DotnetWebTest/bin/Debug/net7.0/Swashbuckle.AspNetCore.Annotations.dll
 /Users/quannguyen/Desktop/Repos/DotnetWebTest/bin/Debug/net7.0/DotnetWebTest.xml
 /Users/quannguyen/Desktop/Repos/DotnetWebTest/obj/Debug/net7.0/DotnetWebTest.xml
+/Users/quannguyen/Desktop/Repos/DotnetWebTest/bin/Debug/net7.0/Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll

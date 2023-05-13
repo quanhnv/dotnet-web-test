@@ -32,7 +32,7 @@ public class WeatherForecastController : ControllerBase
     }
     
     [HttpGet("test")]
-    [Consumes("application/json")]
+    [Consumes("application/json", "text/json")]
     [Produces("application/json")]
     [SwaggerParameter("model", "Test bằng attribute ngoài controller")]
     public async Task<IActionResult> Test([FromBody]ApiModel model, [FromBody]ApiModel2 model2){
