@@ -14,7 +14,12 @@ public class ApiModel
     [Description("Tên là gì?")]
     [DefaultValue("OK")]
     public string Name {get;set;}
+    [RegularExpression("abc")]
     public string Status {get;set;} 
+    [DefaultValue(10)]
+    [Range(0,100)]
+    public int TestMinMax {get;set;}
+    public bool Disabled {get;set;}
 }
 public class FileModel
 {
