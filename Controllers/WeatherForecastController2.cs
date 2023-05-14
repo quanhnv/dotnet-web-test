@@ -18,5 +18,12 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
 
+    public async Task<IActionResult> Test(){
+        try{
+            return Ok();
+        }catch(Exception e){
+            throw;
+        }
+    }
     
 }
